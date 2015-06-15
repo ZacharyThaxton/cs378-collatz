@@ -1,3 +1,10 @@
+sudo: required
+
+# whitelist
+branches:
+  only:
+    - dev
+
 language: cpp
 
 compiler: gcc
