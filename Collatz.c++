@@ -20,9 +20,9 @@
 // cache_array
 // ------------
 
-//#ifdef cache
+#ifdef cache_mac
 int cache[1000000];   	
-//#endif
+#endif
 
 // ------------
 // namespace_shortcut
@@ -53,7 +53,9 @@ int collatz_eval (int i, int j) {
 	int max = 0;
 	int temp = 0;
 	int quickCheck;
+#ifdef cache_mac
 	cache_check();
+#endif
 	if(j > i){
 		quickCheck = j/2 + 1;
 		if( i < quickCheck)
@@ -61,17 +63,17 @@ int collatz_eval (int i, int j) {
 		for(int z = i; z <= j; ++z)
 		{
 			temp = collatz_eval2(z);
-//#ifdef cache
+#ifdef cache_mac
 			if(cache[z] != 0){
 				temp = cache[z];
 			}
-//#endif
+#endif
 			if(temp > max){
-//#ifdef cache
+#ifdef cache_mac
 				if(cache[z] == 0){
 					cache[z] = temp;
 				}
-//#endif
+#endif
 				max = temp;
 			}
 			temp = 0;
@@ -85,17 +87,17 @@ int collatz_eval (int i, int j) {
 		for(int z = j; z <= i; ++z)
 		{
 			temp = collatz_eval2(z);
-//#ifdef cache
+#ifdef cache_mac
 			if(cache[z] != 0){
 				temp = cache[z];
 			}
-//#endif	
+#endif	
 			if(temp > max){
-//#ifdef cache
+#ifdef cache_mac
 				if(cache[z] == 0){
 					cache[z] = temp;
 				}
-//#endif
+#endif
 				max = temp;
 			}
 			temp = 0;
@@ -125,7 +127,7 @@ int collatz_eval2 (int i){
     	assert(c > 0);
     	return c;
 }
-
+#ifdef cache_mac
 void cache_check(){
 #ifndef cachstuff
 #define cachstuff
@@ -147,6 +149,7 @@ void cache_check(){
 	cache[65536] = 15;
 #endif
 }
+#endif
 
 // -------------
 // collatz_print

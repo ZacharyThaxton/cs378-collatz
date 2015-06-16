@@ -70,6 +70,7 @@ void collatz_print (ostream& w, int i, int j, int v);
  * @param w an ostream
  */
 void collatz_solve (istream& r, ostream& w);
+#ifdef cache_mac
 // -------------
 // cache_check
 // -------------
@@ -78,5 +79,6 @@ void collatz_solve (istream& r, ostream& w);
  * sets up eager cache by powers of 2
  */
 void cache_check();
+#endif
 
 #endif // Collatz_h
