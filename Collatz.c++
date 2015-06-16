@@ -27,6 +27,8 @@ pair<int, int> collatz_read (const string& s) {
     int i;
     int j;
     sin >> i >> j;
+    assert(i > 0);
+    assert(j > 0);
     return make_pair(i, j);}
 
 // ------------
@@ -34,14 +36,33 @@ pair<int, int> collatz_read (const string& s) {
 // ------------
 
 int collatz_eval (int i, int j) {
+	assert(i > 0);
+	assert(j > 0);
 	int max = 0;
-	for(int z = i; z <= j; ++z)
+	if(j > i){
+		for(int z = i; z <= j; ++z)
+		{
+			int temp = collatz_eval2(z);
+			if(temp > max){
+				max = temp;
+			}
+		}
+	} 
+	else if(i > j) 
 	{
-		int temp = collatz_eval2(z);
-		if(temp > max){
-			max = temp;
+		for(int z = j; z <= i; ++z)
+		{
+			int temp = collatz_eval2(z);
+			if(temp > max){
+				max = temp;
+			}
 		}
 	}
+	else
+	{
+		max = collatz_eval2(i);
+	}
+	assert(max > 0);
 	return max;
 }
 
