@@ -1,0 +1,65 @@
+commit fc175f73d919509fabd01cb746637005f5dedb98
+Author: Zachary Thaxton <zthaxton@cs.utexas.edu>
+Date:   Tue Jun 16 15:27:28 2015 -0500
+
+    Added math to reduce range
+
+commit bb562ce0b31b8b2abdf9d7add1aa93f69949350e
+Author: Zachary Thaxton <zthaxton@cs.utexas.edu>
+Date:   Tue Jun 16 14:49:16 2015 -0500
+
+    Added a eager/lazy cache part 2
+
+commit ad5c4328f9bee804ea36d67670b5d5d305087abf
+Author: Zachary Thaxton <zthaxton@cs.utexas.edu>
+Date:   Tue Jun 16 14:45:32 2015 -0500
+
+    Added a eager/lazy cache
+
+commit 8a7f27ab0b5b9d0e6ef8d1bf5c4d2c76ce86ede8
+Author: Zachary Thaxton <zthaxton@cs.utexas.edu>
+Date:   Tue Jun 16 12:56:55 2015 -0500
+
+    100 test, unit test, assertions, almost time to merge
+
+commit 7d4352dd06c86347b9f86b29578be89c79ba74d7
+Author: Zachary Thaxton <zthaxton@cs.utexas.edu>
+Date:   Tue Jun 16 12:06:55 2015 -0500
+
+    Working with simple solution
+
+commit 559929ad901827191239face3a04bc5cbeb720ce
+Author: Zachary Thaxton <zthaxton@cs.utexas.edu>
+Date:   Tue Jun 16 10:32:26 2015 -0500
+
+    fixed unit test, now failing
+
+commit 508569bc06b95abe9b19e5501169e06d92b94e08
+Author: Zachary Thaxton <zthaxton@cs.utexas.edu>
+Date:   Mon Jun 15 10:29:56 2015 -0500
+
+    trying to fix travis bug
+
+commit 1c855c1617002abf44627f783ccc9eebc3ce6a3b
+Author: Zachary Thaxton <zthaxton@cs.utexas.edu>
+Date:   Mon Jun 15 10:26:07 2015 -0500
+
+    after a make
+
+commit 42b675d39d4a329dfd1b8315a8e7f8f345debd7b
+Author: Zachary Thaxton <zthaxton@cs.utexas.edu>
+Date:   Mon Jun 15 10:05:27 2015 -0500
+
+    adding for first time
+
+commit 12ba495ae58461316a945ae7e2c203e6b3d18b20
+Author: Zachary Thaxton <zthaxton@cs.utexas.edu>
+Date:   Mon Jun 15 10:04:11 2015 -0500
+
+    pushing files first time
+
+commit 5f30a10eb91e6bbef2caa98d85a5e6c61e59d5a7
+Author: Zachary Thaxton <zthaxton@cs.utexas.edu>
+Date:   Mon Jun 15 09:47:11 2015 -0500
+
+    adding ignore
