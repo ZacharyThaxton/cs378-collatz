@@ -52,8 +52,12 @@ int collatz_eval (int i, int j) {
 	assert(j > 0);
 	int max = 0;
 	int temp = 0;
+	int quickCheck;
 	cache_check();
 	if(j > i){
+		quickCheck = j/2 + 1;
+		if( i < quickCheck)
+			i = quickCheck;
 		for(int z = i; z <= j; ++z)
 		{
 			temp = collatz_eval2(z);
@@ -75,6 +79,9 @@ int collatz_eval (int i, int j) {
 	} 
 	else if(i > j) 
 	{
+		quickCheck = i/2 + 1;
+		if( j < quickCheck)
+			j = quickCheck;
 		for(int z = j; z <= i; ++z)
 		{
 			temp = collatz_eval2(z);
