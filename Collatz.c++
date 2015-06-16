@@ -52,6 +52,7 @@ int collatz_eval (int i, int j) {
 	assert(j > 0);
 	int max = 0;
 	int temp = 0;
+	cache_check();
 	if(j > i){
 		for(int z = i; z <= j; ++z)
 		{
