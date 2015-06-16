@@ -40,6 +40,15 @@ pair<int, int> collatz_read (const string& s);
 int collatz_eval (int i, int j);
 
 // -------------
+// collatz_eval2
+// -------------
+
+/**
+ * @param i is current number being tested
+ */
+int collatz_eval2 (int i);
+
+// -------------
 // collatz_print
 // -------------
 
