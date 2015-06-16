@@ -21,7 +21,7 @@
 // ------------
 
 #ifdef cache_mac
-int cache[1000000];   	
+int cache[1000000];   	// Large cache map
 #endif
 
 // ------------
@@ -56,16 +56,18 @@ int collatz_eval (int i, int j) {
 #ifdef cache_mac
 	cache_check();
 #endif
-	if(j > i){
-		quickCheck = j/2 + 1;
+	if(j > i){ //Forwards direction
+		quickCheck = j/2 + 1; //magic math to reduce range
 		if( i < quickCheck)
 			i = quickCheck;
 		for(int z = i; z <= j; ++z)
 		{
-			temp = collatz_eval2(z);
+			
 #ifdef cache_mac
 			if(cache[z] != 0){
 				temp = cache[z];
+			}else {
+				temp = collatz_eval2(z);
 			}
 #endif
 			if(temp > max){
@@ -79,17 +81,18 @@ int collatz_eval (int i, int j) {
 			temp = 0;
 		}
 	} 
-	else if(i > j) 
+	else if(i > j) //backwards direction
 	{
-		quickCheck = i/2 + 1;
+		quickCheck = i/2 + 1; //magic math to reduce range
 		if( j < quickCheck)
 			j = quickCheck;
 		for(int z = j; z <= i; ++z)
 		{
-			temp = collatz_eval2(z);
 #ifdef cache_mac
 			if(cache[z] != 0){
 				temp = cache[z];
+			}else {
+				temp = collatz_eval2(z);
 			}
 #endif	
 			if(temp > max){
@@ -105,7 +108,7 @@ int collatz_eval (int i, int j) {
 	}
 	else
 	{
-		max = collatz_eval2(i);
+		max = collatz_eval2(i); //They are the same
 	}
 	assert(max > 0);
 	return max;
@@ -128,6 +131,10 @@ int collatz_eval2 (int i){
     	return c;
 }
 #ifdef cache_mac
+// ------------
+// cache_check
+// ------------
+
 void cache_check(){
 #ifndef cachstuff
 #define cachstuff
