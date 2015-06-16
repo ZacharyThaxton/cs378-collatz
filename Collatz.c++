@@ -16,6 +16,18 @@
 
 #include "Collatz.h"
 
+// ------------
+// cache_array
+// ------------
+
+//#ifdef cache
+int cache[1000000];   	
+//#endif
+
+// ------------
+// namespace_shortcut
+// ------------
+
 using namespace std;
 
 // ------------
@@ -39,23 +51,46 @@ int collatz_eval (int i, int j) {
 	assert(i > 0);
 	assert(j > 0);
 	int max = 0;
+	int temp = 0;
 	if(j > i){
 		for(int z = i; z <= j; ++z)
 		{
-			int temp = collatz_eval2(z);
+			temp = collatz_eval2(z);
+//#ifdef cache
+			if(cache[z] != 0){
+				temp = cache[z];
+			}
+//#endif
 			if(temp > max){
+//#ifdef cache
+				if(cache[z] == 0){
+					cache[z] = temp;
+				}
+//#endif
 				max = temp;
 			}
+			temp = 0;
 		}
 	} 
 	else if(i > j) 
 	{
 		for(int z = j; z <= i; ++z)
 		{
-			int temp = collatz_eval2(z);
+			temp = collatz_eval2(z);
+//#ifdef cache
+			if(cache[z] != 0){
+				temp = cache[z];
+			}
+//#endif	
 			if(temp > max){
+//#ifdef cache
+				if(cache[z] == 0){
+					cache[z] = temp;
+				}
+//#endif
 				max = temp;
 			}
+			temp = 0;
 		}
 	}
 	else
@@ -83,6 +118,27 @@ int collatz_eval2 (int i){
     	return c;
 }
 
+void cache_check(){
+#ifndef cachstuff
+#define cachstuff
+	cache[1] = 0;
+	cache[2] = 1;
+	cache[4] = 2;
+	cache[8] = 3;
+	cache[16] = 4;
+	cache[32] = 5;
+	cache[128] = 6;
+	cache[256] = 7;
+	cache[512] = 8;
+	cache[1024] = 9;
+	cache[2048] = 10;
+	cache[4096] = 11;
+	cache[8192] = 12;
+	cache[16384] = 13;
+	cache[32786] = 14;
+	cache[65536] = 15;
+#endif
+}
 
 // -------------
 // collatz_print

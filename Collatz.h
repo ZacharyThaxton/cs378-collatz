@@ -70,5 +70,13 @@ void collatz_print (ostream& w, int i, int j, int v);
  * @param w an ostream
  */
 void collatz_solve (istream& r, ostream& w);
+// -------------
+// cache_check
+// -------------
+
+/**
+ * sets up eager cache by powers of 2
+ */
+void cache_check();
 
 #endif // Collatz_h
